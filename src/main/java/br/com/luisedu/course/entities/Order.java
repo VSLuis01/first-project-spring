@@ -93,6 +93,12 @@ public class Order implements Serializable {
         return this.items;
     }
 
+    public Double getTotal() {
+        return this.items.stream()
+                .mapToDouble(OrderItem::getSubTotal)
+                .sum();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
