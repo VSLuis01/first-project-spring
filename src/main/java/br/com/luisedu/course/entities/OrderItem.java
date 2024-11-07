@@ -1,6 +1,7 @@
 package br.com.luisedu.course.entities;
 
 import br.com.luisedu.course.entities.pk.OrderItemPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -42,6 +43,7 @@ public class OrderItem implements Serializable {
         this.quantity = quantity;
     }
 
+    @JsonIgnore
     public Order getOrder() {
         return id.getOrder();
     }
